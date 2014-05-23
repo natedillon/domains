@@ -1,5 +1,5 @@
 """
-Django settings for whois project.
+Django settings for the project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     # Third party apps
 
     # Local apps
+    'domains',
 )
 
 MIDDLEWARE_CLASSES = (
