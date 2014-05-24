@@ -1,7 +1,9 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 import pythonwhois
 
-def home(request):
+
+def home(request, **kwargs):
 
     # Initialize the context
     context = {}

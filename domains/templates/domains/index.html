@@ -16,10 +16,18 @@
     </head>
 
     <body>
-        <p>Hello world!</p>
+        <h1>Domain Search</h1>
 
+        <form role="form" method="get" class="form-inline">
+            <div class="form-group">
+                <label for="domain-search" class="sr-only">Search for a Domain</label>
+                <input type="text" class="form-control" id="domain-search" name="q" placeholder="Enter a domain">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+        <p>{{ query }}</p>
         <p>{{ domain.name }}</p>
-        <p>{{ domain.whois }}</p>
 
         <!--
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
