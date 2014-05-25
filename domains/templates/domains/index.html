@@ -27,6 +27,13 @@
         </form>
 
         <h2>{{ domain.name }}</h2>
+        <p>
+            {% if domain.whois.contacts.registrant == None %}
+                Domain is available.
+            {% else %}
+                Domain is not available.
+            {% endif %}
+        </p>
 
         <!--
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
