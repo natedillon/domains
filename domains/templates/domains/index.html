@@ -10,32 +10,37 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
 
-        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}domains/css/style.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}domains/css/bootstrap.css">
         <!-- <script src="js/vendor/modernizr-2.8.0.min.js"></script> -->
     </head>
 
     <body>
-        <h1>Domain Search</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Domain Search</h1>
 
-        <form role="form" method="get" class="form-inline">
-            <div class="form-group">
-                <label for="domain-search" class="sr-only">Search for a Domain</label>
-                <input type="text" class="form-control" id="domain-search" name="q" placeholder="Enter a domain">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+                    <form role="form" method="get" class="form-inline">
+                        <div class="form-group">
+                            <label for="domain-search" class="sr-only">Search for a Domain</label>
+                            <input type="text" class="form-control" id="domain-search" name="q" placeholder="Enter a domain">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
 
-        {% if query %}
-            <h2>{{ domain.name }}</h2>
-            <p>
-                {% if domain.whois.contacts.registrant == None %}
-                    Domain is available.
-                {% else %}
-                    Domain is not available.
-                {% endif %}
-            </p>
-        {% endif %}
+                    {% if query %}
+                        <h2>{{ domain.name }}</h2>
+                        <p>
+                            {% if domain.whois.contacts.registrant == None %}
+                                Domain is available.
+                            {% else %}
+                                Domain is not available.
+                            {% endif %}
+                        </p>
+                    {% endif %}
+                </div>
+            </div> <!-- end .row -->
+        </div> <!-- end .container -->
 
         <!--
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
