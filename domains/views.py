@@ -8,13 +8,19 @@ def home(request, **kwargs):
     # Initialize the context
     context = {}
 
-    # Set the domain name
-    name = 'natedillon.com'
+    # Check for query
+    if request.method == 'GET' and 'q' in request.GET:
 
-    # Create the domain context
-    context['domain'] = {
-        'name': name,
-        'whois': pythonwhois.get_whois(name),
-    }
+        # Set the query value
+        context['query'] = request.GET['q']
+
+        # Set the domain name
+        name = context['query']
+
+        # Create the domain context
+        context['domain'] = {
+            'name': name,
+            'whois': pythonwhois.get_whois(name),
+        }
 
     return render(request, 'domains/index.html', context)
