@@ -1,4 +1,4 @@
-Django==1.6.5
+django>=1.6.5,<1.7.0
 wsgiref==0.1.2
 fabric==1.8.3
 pythonwhois==2.1.4
